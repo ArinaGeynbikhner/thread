@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <title>Следующая подсказака тут</title>
+    <style>
+        body { font-family: 'Times New Roman', Times, serif, sans-serif; text-align: center; margin: 50px; }
+        #content { display: none; }
+        .hidden { display: none; }
+        
+    </style>
+</head>
+<body bgcolor= F5F5F5>
+    <div id="login">
+        <h3>Пароль.</h3>
+        <input type="password" id="password" placeholder="">
+        <button onclick="checkPassword()">>></button>
+        <p id="error" class="hidden" style="color: rgb(0, 0, 0);">Неверный пароль.</p>
+    </div>
+    
+    <div id="content">
+        <p>Мои поздравления, искатель.</p>
+        <img src="images/thread.png" alt="">
+    </div>
+    
+    <script>
+         function checkPassword() {
+            const correctPassword = "Молоко скроет свет"; 
+            const inputPassword = document.getElementById("password").value.toLowerCase();
+            
+            if (inputPassword === correctPassword.toLowerCase()) {
+                document.getElementById("login").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            } else {
+                document.getElementById("error").classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
